@@ -7,7 +7,8 @@ import { loginPage } from "../tests/pageobjects/login.po";
 import { addjobtitlePage } from "./pageobjects/addjobtitle.po"; 
 import logindata from "../testdata/login.json"
 import jobtitle from "../testdata/jobtitle.json"
-
+const fs=require('fs')
+const path =require('path')
 
 test("Verify Add Jobtitle", async ({ page }) => {
 

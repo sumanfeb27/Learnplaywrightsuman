@@ -9,11 +9,9 @@ exports.addjobtitlePage = class addjobtitlePage {
         this.jobs= page.locator("(//span[@class='oxd-topbar-body-nav-tab-item'])[2]")
         this.job=page.locator("(//ul[@role='menu']//li)[1]")
         this.addjobtitle = page.locator("//button[contains(.,'Add')]")
-        // this.JobT = page.locator("(//input[@class='oxd-input oxd-input--active'])[2]")
-        // this.jobdesc = page.locator("//textarea[@placeholder='Add note']")
-        // this.savebutton=page.locator("//button[@type='submit']")
         this.jobt=page.locator("(//span[normalize-space(text())='Configuration']/following::input)[1]")
         this.jobdec = page.locator("//textarea[@placeholder='Add note']")
+        this.fileupload= page.locator('input[type="file"]').setInputFiles('./testdata/files/Playwright.jpg')
         this.savebutton=page.locator("//button[@type='submit']")
 
     }
@@ -24,6 +22,7 @@ exports.addjobtitlePage = class addjobtitlePage {
         await this.addjobtitle.click()
         await this.jobt.fill(jobtitle)
         await this.jobdec.fill(jobdec)
+        await this.fileupload.click()
         await this.savebutton.click()
     }
     
